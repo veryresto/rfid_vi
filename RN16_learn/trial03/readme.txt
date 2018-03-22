@@ -1,0 +1,1 @@
+Was suggested to increase reciver IQ rate for easier FM0 decoding process
