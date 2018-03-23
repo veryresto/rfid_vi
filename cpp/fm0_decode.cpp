@@ -15,20 +15,18 @@ int main(){
 	int i, j, rx = 0;
 	int thr = 3;
 	int sim = 0;
-	int len, cont, note, loop;
+	int len, cont, note;
 	char f;
 	int m = sizeof(bits)/sizeof(int);
 	
 	printf("size of bits: %d\n", m);
 	
-	loop = 0;
 	for (i = 0; i < m; i++){
-		loop++;
 		printf("\nI-%d", i);
 		cont = 1;
 		len = 1;
 		f = 'n';
-		note = 9999;
+		note = -9;
 		for (j = 0; j < thr+1; j++){		
 			if(bits[i+j]==bits[i+j+1]){
 				len++;
@@ -41,10 +39,11 @@ int main(){
 				break;
 			}
 		}
-		if(cont==1 && len>=thr){
+		if(cont==1 && j>=thr-1){
 			f = 'S';
-		}else if(len>=thr){
+		}else if(cont==0 && j>=thr-1){
 			f = 'E';
+			note++;
 		}
 		
 		printf(" i-%d. len-%d cont-%d note-%d %c", i, len, cont, note, f);
