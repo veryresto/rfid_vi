@@ -33,10 +33,9 @@ int main(){
 				len++;
 			}else{
 				diff++;
-				if(len<thr){
+				//if(len<thr){
 					cont = 0;
-				
-				}
+				//}
 				note = j;
 				printf("--NOTE%d--", note);
 
@@ -58,9 +57,9 @@ int main(){
 		}
 		
 		printf(" i-%d. len-%d cont-%d note-%d diff-%d %c", i, len, cont, note, diff, f);
-		if(note == j){
+		//if(note == j){
 			i = i + note;
 			//break;
-		}
+		//}
 	}
 }
