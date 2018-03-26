@@ -12,7 +12,7 @@ int main(){
 	//int rn[17] = {};
 	//std::vector<int*> rn;
 	
-	int i, j, rx = 0;
+	int i, j, rx, diff = 0;
 	int thr = 3;
 	int sim = 0;
 	int len, cont, note;
@@ -26,24 +26,27 @@ int main(){
 		cont = 1;
 		len = 1;
 		f = 'n';
-		note = -9;
+		note = 9999;
+		diff = 0;
 		for (j = 0; j < thr+1; j++){		
 			if(bits[i+j]==bits[i+j+1]){
 				len++;
 			}else{
 				if(len<thr){
 					cont = 0;
+					diff++;
 				}
 				note = j;
 				printf("--NOTE%d--", note);
-				break;
+
+				if(j>=thr-1){
+					break;
+				}	
 			}
 		}
 		if(cont==1 && j>=thr-1){
 			f = 'S';
-		}else if(cont==0 && j>=thr-1){
-			f = 'E';
-			note++;
+			note = j;
 		}
 		
 		printf(" i-%d. len-%d cont-%d note-%d %c", i, len, cont, note, f);
