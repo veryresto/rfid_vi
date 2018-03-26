@@ -32,24 +32,32 @@ int main(){
 			if(bits[i+j]==bits[i+j+1]){
 				len++;
 			}else{
+				diff++;
 				if(len<thr){
 					cont = 0;
-					diff++;
+				
 				}
 				note = j;
 				printf("--NOTE%d--", note);
 
 				if(j>=thr-1){
-					break;
+					if(cont == 1){
+						break;
+					}
+					if(diff >= 2){
+						break;
+					}
 				}	
 			}
 		}
 		if(cont==1 && j>=thr-1){
 			f = 'S';
 			note = j;
+		} else {
+			f = 'E';
 		}
 		
-		printf(" i-%d. len-%d cont-%d note-%d %c", i, len, cont, note, f);
+		printf(" i-%d. len-%d cont-%d note-%d diff-%d %c", i, len, cont, note, diff, f);
 		if(note == j){
 			i = i + note;
 			//break;
