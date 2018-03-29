@@ -47,34 +47,21 @@ int main(){
 		
 		// loop based on threshold
 		for (j = 0; j < thr+1; j++){
-//			if(stop1 == 0){
-//				// check continous bit sequence
-//				if(bit[i+j]==bit[i+j+1]){
-//					len1++;
-//				} else {
-//					stop1++;
-//				}
-//			}else if(stop2 == 0){
-//				// check continous bit sequence
-//				if(bit[i+j]==bit[i+j+1]){
-//					len2++;
-//				} else {
-//					stop2++;
-//				}
-//			}
-			
-			if(bit[i+j]==bit[i+j+1]){
-				if(stop1 == 0)
+			if(stop1 == 0){
+				// check continous bit sequence
+				if(bit[i+j]==bit[i+j+1]){
 					len1++;
-				else if(stop2 == 0)
-					len2++;
-			} else {
-				if(stop1 == 0)
+				} else {
 					stop1++;
-				else if(stop2 == 0)
+				}
+			}else if(stop2 == 0){
+				// check continous bit sequence
+				if(bit[i+j]==bit[i+j+1]){
+					len2++;
+				} else {
 					stop2++;
+				}
 			}
-
 			
 		}
 		if(len1 >= thr){ // len1 3.. SYMBOL1
@@ -91,7 +78,7 @@ int main(){
 		}
 		rnx++;
 		printf(". len1-%d len2-%d %c", len1, len2, f);
-		if(rnx >= rnsize){
+		if(rnx >= rnsize){ // while rnx, i++
 			break;
 		}
 	}
