@@ -47,23 +47,32 @@ int main(){
 		
 		// loop based on threshold
 		for (j = 0; j < thr+1; j++){
-			if(stop1 == 0){
-				// check continous bit sequence
-				if(bit[i+j]==bit[i+j+1]){
+//			if(stop1 == 0){
+//				// check continous bit sequence
+//				if(bit[i+j]==bit[i+j+1]){
+//					len1++;
+//				} else {
+//					stop1++;
+//				}
+//			}else if(stop2 == 0){
+//				// check continous bit sequence
+//				if(bit[i+j]==bit[i+j+1]){
+//					len2++;
+//				} else {
+//					stop2++;
+//				}
+//			}
+			
+			if(bit[i+j]==bit[i+j+1]){
+				if(stop1 == 0)
 					len1++;
-				} else {
-					stop1++;
-				}
-			}else if(stop2 == 0){
-				// check continous bit sequence
-				if(i == 27){
-					//printf("%d - %d", )
-				}
-				if(bit[i+j]==bit[i+j+1]){
+				else if(stop2 == 0)
 					len2++;
-				} else {
+			} else {
+				if(stop1 == 0)
+					stop1++;
+				else if(stop2 == 0)
 					stop2++;
-				}
 			}
 
 			
