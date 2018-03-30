@@ -17,7 +17,7 @@ int main(){
 	int i, j;
 	int thr = 3;
 	int rnx = 0;
-	int len, len1, len2, stop1, stop2;
+	int len1, len2, stop1, stop2;
 	char f;
 	
 	
@@ -41,7 +41,7 @@ int main(){
 	// loop based on the amount of bits stored on file
 	for (i = 0; i < y; i++){
 		printf("\nI-%d", i);
-		len = 1; len1 = 1; len2 = 1;
+		len1 = 1; len2 = 1;
 		f = 'n';
 		stop1 = 0; stop2 = 0;
 		
