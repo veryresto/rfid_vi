@@ -71,10 +71,10 @@ int main(){
 		} else { // SYMBOL0
 			f = 'E';
 			rn[rnx] = 0;
-			if(len2>=3){
-				len2 = thr - 1;
+			if(len2>=thr){
+				len2 = thr - 1; // trues
 			} 
-			i = i + len1 + len2 - 1;
+			i = i + len1 + len2 - 1; // false
 		}
 		rnx++;
 		printf(". len1-%d len2-%d %c", len1, len2, f);
