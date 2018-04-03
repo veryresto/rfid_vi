@@ -1,3 +1,0 @@
-D:\Users\Documents\LabVIEW Data\FeryRFID_VI\rfid_vi\transmitRFID.vi
-default
-default
